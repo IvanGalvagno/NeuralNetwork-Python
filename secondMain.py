@@ -47,4 +47,5 @@ for j in range(60000):
     #Difeca entre os valores ate l1
     l1_delta = l1_error * nonlin(l1,deriv=True)
 
-    
+    syn1 += l1.T.dot(l2_delta)
+    syn0 += l0.T.dot(l1_delta)
