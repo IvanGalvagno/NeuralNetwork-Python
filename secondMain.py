@@ -44,4 +44,7 @@ for j in range(60000):
     #Valor de cada  l1 contribui para o erro da l2, baseado nos pesos
     l1_error = l2_delta.dot(syn1.T)
 
+    #Difeca entre os valores ate l1
+    l1_delta = l1_error * nonlin(l1,deriv=True)
+
     
