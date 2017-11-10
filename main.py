@@ -18,3 +18,10 @@ X = np.array([
 y = np.array([
     [0,0,1,1]
 ]).T
+
+#SEED valores aleatorios para realizacao do calculo
+np.random.seed(1)
+
+#Inicialização dos Pesos randomicamente
+Syn0 = 2*np.random.random((3,1)) -1
+
