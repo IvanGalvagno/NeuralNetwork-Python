@@ -41,4 +41,7 @@ for j in range(60000):
     #Qual a direcao correta / qual o valor da saida
     l2_delta = l2_error*nonlin(l2,deriv=True)
 
+    #Valor de cada  l1 contribui para o erro da l2, baseado nos pesos
+    l1_error = l2_delta.dot(syn1.T)
+
     
