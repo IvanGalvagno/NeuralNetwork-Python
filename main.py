@@ -11,12 +11,14 @@ X = np.array([
     [0,0,1],
     [0,1,1],
     [1,0,0],
-    [1,1,1]
+    [1,1,1],
+    [0,1,0],
+    [1,0,1]
 ])
 
 #Valores de SAIDA
 y = np.array([
-    [0,0,1,1]
+    [0,0,1,1,0,1]
 ]).T
 
 #SEED valores aleatorios para realizacao do calculo
@@ -30,8 +32,11 @@ for iter in range(1000):
     l0 = X   #Layer 0
     l1 = nonlin(np.dot(l0,Syn0)) #Hidden Layer
 
+    
     #Erro
     l1_error = y - l1
+
+    print('Error : ' , l1_error , ' interation [' , iter , ']')
 
     l1_delta = l1_error * nonlin(l1,True)
 
