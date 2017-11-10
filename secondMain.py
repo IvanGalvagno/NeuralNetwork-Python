@@ -36,7 +36,7 @@ for j in range(60000):
     l2_error = y - l2
 
     if j%10000 == 0:
-        print "Error" + str(np.mean(np.abs(l2_error)))
+        print ("Error" , str(np.mean(np.abs(l2_error))))
     
     #Qual a direcao correta / qual o valor da saida
     l2_delta = l2_error*nonlin(l2,deriv=True)
