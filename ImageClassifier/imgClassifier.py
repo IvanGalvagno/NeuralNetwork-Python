@@ -1,5 +1,7 @@
 import numpy as np
 from PIL import Image
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 
 #import image
 i = Image.open('ImageClassifier/images/dot.png')
@@ -8,6 +10,7 @@ iar = np.asarray(i)
 print(iar)
 # UM PIXEL DA IMAGEM .DOT que é 8x8
 #    R    G   B  Alpha
+#   [  0   0   0 255]
 #   [255 255 255 255]
 #   [255 255 255 255]
 #   [255 255 255 255]
@@ -15,4 +18,8 @@ print(iar)
 #   [255 255 255 255]
 #   [255 255 255 255]
 #   [255 255 255 255]
-#   [255 255 255 255]
+#  Os numeros representam uma colocarao em determinado pixel
+
+imgplot = plt.imshow(iar)
+#plt.show(imgplot)
+plt.show(plt.colorbar())
