@@ -28,6 +28,8 @@ import functools
 # print(imgplot)
 # plt.show(imgplot)
 
+
+#TRANSFOR IMAGE IN BLACK AND WHITE
 def threshold(imageArray):
     balanceAr = []
     newAr = imageArray
@@ -67,8 +69,10 @@ iar3 = np.array(i3)
 i4 = Image.open('ImageClassifier/images/sentdex.png')
 iar4 = np.array(i4)
 
-
+threshold(iar)
+threshold(iar2)
 threshold(iar3)
+threshold(iar4)
 
 fig = plt.figure()
 ax1 = plt.subplot2grid((8,6), (0,0), rowspan=4, colspan=3)
