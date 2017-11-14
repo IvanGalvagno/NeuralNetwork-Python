@@ -28,6 +28,19 @@ import functools
 # print(imgplot)
 # plt.show(imgplot)
 
+def createExamples():
+    numberArrayExamples = open('numArEx.txt', 'a')
+    numberWeHave = range(1,10)
+    versionsWeHave = range(1,10)
+    for eachNum in numberWeHave:
+        for eachVer in versionsWeHave:
+            imgFilePath = 'images/numbers/'+ str(eachNum)+ "." + str(eachVer)+ '.png'
+            ei = Image.open(imgFilePath)
+            eiar = np.array(ei)
+            eiar1 = str(eiar.tolist())
+            lineToWrite = str(eachNum)+'::'+eiar1+'\n'
+            numberArrayExamples.write(lineToWrite)
+
 
 #TRANSFOR IMAGE IN BLACK AND WHITE
 def threshold(imageArray):
@@ -86,4 +99,5 @@ ax4.imshow(iar4)
 
 plt.show()
 
+createExamples()
 
