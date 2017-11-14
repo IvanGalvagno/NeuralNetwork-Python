@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 #import image
-i = Image.open('ImageClassifier/images/dot.png')
+i = Image.open('ImageClassifier/images/numbers/y0.4.png')
 #Transforma a Imagem e Array, Aonde cada bloco é uma Linha da imagem
 iar = np.asarray(i)
 print(iar)
@@ -22,4 +22,6 @@ print(iar)
 
 imgplot = plt.imshow(iar)
 #plt.show(imgplot)
-plt.show(plt.colorbar())
+#plt.show(plt.colorbar())
+print(imgplot)
+plt.show(imgplot)
