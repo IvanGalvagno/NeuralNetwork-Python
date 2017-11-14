@@ -33,8 +33,26 @@ def threshold(imageArray):
 
     for eachRow in imageArray:
         for eachPix in eachRow:
-            print(eachPix)
-            time.sleep(1)
+            # print(eachPix)
+            # time.sleep(1)
+            avgNum = reduce(lambda x,y: x+y, eachPix[:3]) / len(eachPix[:3])
+            blanceAr.append(avgNum)
+    balance = reduce(lambda x,y: x+y, blanceAr) / len(blanceAr)
+
+    for eachRow in newAr:
+        for eachPix in eachRow:
+            if( reduce(lambda x,y: x+y, eachPix[:3]) / len(eachPix[:3]) > balance):
+                eachPix[0] = 255  #RED
+                eachPix[1] = 255  #GREEN
+                eachPix[2] = 255  #BLUE
+                eachPix[3] = 255  #alpha
+            else:
+                eachPix[0] = 0
+                eachPix[1] = 0
+                eachPix[2] = 0
+                eachPix[3] = 255
+    return newAr
+                
 
 i = Image.open('ImageClassifier/images/numbers/0.1.png')
 iar = np.array(i)
@@ -47,6 +65,9 @@ iar3 = np.array(i3)
 
 i4 = Image.open('ImageClassifier/images/sentdex.png')
 iar4 = np.array(i4)
+
+
+threshold(iar3)
 
 # fig = plt.figure()
 # ax1 = plt.subplot2grid((8,6), (0,0), rowspan=4, colspan=3)
@@ -62,4 +83,3 @@ iar4 = np.array(i4)
 # plt.show()
 
 
-threshold(iar3)
